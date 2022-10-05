@@ -19,7 +19,7 @@ if (!isset($_SESSION['email']) || empty($_SESSION['email'])) {
           <?php require_once("./dashboard.php");?>
         <!-- dashboard ends here -->
           <!-- /.row-->
-          <?php require_once("./traffic.php");?>
+          <?php //require_once("./traffic.php");?>
           <!-- /.card.mb-4-->
        
             <!-- /.col-->

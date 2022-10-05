@@ -1,4 +1,13 @@
-<?php require_once("./head.php");?>
+<?php 
+session_start();
+if (!isset($_SESSION['email']) || empty($_SESSION['email'])) {
+  header("location: login.php");
+  exit();
+}
+
+require_once("./head.php");
+
+?>
   <body>
     <?php require_once("./side-bar.php");?>
     <div class="wrapper d-flex flex-column min-vh-100 bg-light">
@@ -58,6 +67,7 @@
             if(isset($_SESSION['message'])):?>
                 <div class="<?= $_SESSION['alert'];?>">
                     <strong><?= $_SESSION['message'];?></strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                  </div>
         <?php endif;?>
                 <form action="" method="post">

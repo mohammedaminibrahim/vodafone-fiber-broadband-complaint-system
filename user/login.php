@@ -16,7 +16,7 @@ require_once("./head.php");?>
 
         if(!empty($email) && !empty($password)){
             //query to select user email
-            $sqlSelectUsers = "SELECT * FROM users WHERE email = '$email'";
+            $sqlSelectUsers = "SELECT * FROM customers WHERE email = '$email'";
             $statement = $conn->prepare($sqlSelectUsers);
             $results = $statement->execute();
             $rows = $statement->fetchAll();
@@ -26,6 +26,7 @@ require_once("./head.php");?>
                 foreach($rows as $row){
                     if(password_verify($password, $row['password'])){
                         $_SESSION['email'] = $email;
+                        $_SESSION['customerNumber'] = $row['customerNumber'];
                        // $_SESSION['customernumber'] = $row[''];
                         header("location: index.php");
                     } else {
@@ -56,6 +57,7 @@ require_once("./head.php");?>
             if(isset($_SESSION['message'])):?>
                 <div class="<?= $_SESSION['alert'];?>">
                     <strong><?= $_SESSION['message'];?></strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                  </div>
         <?php endif;?>
         <div class="row justify-content-center">

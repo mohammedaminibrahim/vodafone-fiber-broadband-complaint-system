@@ -1,7 +1,7 @@
 
 
                     <?php 
-                   // session_start();
+                   session_start();
                     require_once("./head.php");?>
   <body>
     <?php require_once("./side-bar.php");?>

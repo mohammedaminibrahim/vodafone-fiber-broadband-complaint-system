@@ -1,9 +1,11 @@
-<?php require_once("./head.php");?>
+<?php 
+session_start();
+require_once("./head.php");?>
 <?php require_once("./auxiliaries.php");
 //$_SESSION['email'] = $email;
 //userLogin($email);
 
-userIsLogin();
+
 
 
 
@@ -44,7 +46,8 @@ userIsLogin();
                           
 
                             require_once("./config.php");
-                            $sqlSelectComplains = "SELECT * FROM reply";
+                            $customerNumber = $_SESSION['customerNumber'];
+                            $sqlSelectComplains = "SELECT * FROM reply WHERE customerNumber = '$customerNumber'";
                             $statement = $conn->prepare($sqlSelectComplains);
                             $statement->execute();
                             $results = $statement->rowCount();

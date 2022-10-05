@@ -2,6 +2,7 @@
 <?php require_once("./auxiliaries.php");
 //$_SESSION['email'] = $email;
 //userLogin($email);
+ob_start();
 
 userIsLogin();
 
@@ -24,11 +25,11 @@ userIsLogin();
                     <!-- /.col-->
 
                         <?php
-
+                            session_start();
                             require_once("./config.php");
 
                             if(isset($_POST['submit'])){
-                                $customerNumber = uniqid();
+                                $customerNumber = $_SESSION['customerNumber'];
                                 $telephone = $_POST['telephone'];
                                 $priority = $_POST['priority'];
                                 $description = $_POST['description'];
@@ -42,6 +43,7 @@ userIsLogin();
                                     if($results){
                                         $_SESSION['customerNumber'] = $customerNumber;
                                         header("location: index.php");
+                                        ob_end_flush();
                                     } else{
                                         $_SESSION['message'] = "Sorry!! Something went wrong!!";
                                         $_SESSION['alert'] = "alert alert-warning";

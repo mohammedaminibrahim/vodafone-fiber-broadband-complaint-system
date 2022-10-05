@@ -1,4 +1,12 @@
-<?php require_once("./head.php");?>
+<?php 
+session_start();
+if (!isset($_SESSION['email']) || empty($_SESSION['email'])) {
+  header("location: login.php");
+  exit();
+}
+
+
+require_once("./head.php");?>
 <?php require_once("./auxiliaries.php");
 //$_SESSION['email'] = $email;
 //userLogin($email);
@@ -30,8 +38,9 @@ userIsLogin();
             if(isset($_SESSION['message'])):?>
                 <div class="<?= $_SESSION['alert'];?>">
                     <strong><?= $_SESSION['message'];?></strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                  </div>
-        <?php endif;?>
+                 <?php endif;?>
                   <div class="tab-pane p-3 active preview" role="tabpanel" id="preview-681">
                     <table class="table table-striped">
                       <thead>

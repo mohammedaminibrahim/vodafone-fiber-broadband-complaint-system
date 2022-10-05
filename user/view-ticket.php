@@ -3,7 +3,10 @@
 //$_SESSION['email'] = $email;
 //userLogin($email);
 
-userIsLogin();
+session_start();
+
+$customerNumberSess =  $_SESSION['customerNumber'];
+//userIsLogin();
 
 
 
@@ -42,28 +45,8 @@ userIsLogin();
                           <?php
 
                             
-require_once("./config.php");
-                            $sqlSelectComplains = "SELECT * FROM complains";
-                            $statement = $conn->prepare($sqlSelectComplains);
-                            $statement->execute();
-                            $results = $statement->rowCount();
-                            $rows = $statement->fetchAll();
-
-
-
-                            foreach($rows as $row){
-                                $id = $row['id'];
-                                $customerNumber = $row['customerNumber'];
-                                $telephone = $row['telephone'];
-                                $priority = $row['priority']; 
-                                $description = $row['description'];
-                                $status = $row['status'];
-                                $createdAt = $row['createdAt'];
-                            }
-
-
-                            
-                            $sqlSelectComplains = "SELECT * FROM complains WHERE id = '$id'";
+                        require_once("./config.php");
+                            $sqlSelectComplains = "SELECT * FROM complains WHERE customerNumber = '$customerNumberSess'";
                             $statement = $conn->prepare($sqlSelectComplains);
                             $statement->execute();
                             $results = $statement->rowCount();
@@ -72,7 +55,7 @@ require_once("./config.php");
                           
 
                             foreach($rows as $row){
-                                $id = $row['id'];
+                               
                                 $customerNumber = $row['customerNumber'];
                                 $telephone = $row['telephone'];
                                 $priority = $row['priority']; 

@@ -1,4 +1,4 @@
-<?php session_start();?>
+
 <div class="sidebar sidebar bg-danger sidebar-fixed" id="sidebar">
 <div class="sidebar-brand d-none d-md-flex">
   <svg class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
@@ -26,10 +26,7 @@
       <svg class="nav-icon">
         <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
       </svg> logout</a></li>
-      <li class="nav-item"><a class="nav-link" href="">
-      <svg class="nav-icon">
-        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-avatar"></use>
-      </svg> <?= $_SESSION['email'];?></a></li>
+      
 
 </ul>
 <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>

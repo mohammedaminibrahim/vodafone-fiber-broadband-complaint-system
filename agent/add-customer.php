@@ -1,7 +1,7 @@
 
 
                     <?php 
-                    //session_start();
+                    session_start();
                     require_once("./head.php");?>
   <body>
     <?php require_once("./side-bar.php");?>
@@ -80,7 +80,7 @@
                           </div>
                           <div class="col-md-3">
                             <label class="form-label" for="validationServer02">Password</label>
-                            <input name="password" class="form-control is-valid" id="validationServer02" type="text" required="">
+                            <input name="password" class="form-control is-valid" id="validationServer02" type="password" required="">
                           </div>
                           <div class="col-md-3">
                             <label class="form-label" for="validationServer02">Ghana Card Number</label>
