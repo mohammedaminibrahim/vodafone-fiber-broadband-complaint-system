@@ -9,3 +9,19 @@ Database that keeps records of agents,customers, customer complaints, manager re
 
 # Some Screen Shoots
 ![alt text](https://github.com/mohammedaminibrahim/vodafone-fiber-broadband-complaint-system/blob/main/manager.PNG)
+![alt text](https://github.com/mohammedaminibrahim/vodafone-fiber-broadband-complaint-system/blob/main/manager.PNG)
+![alt text](https://github.com/mohammedaminibrahim/vodafone-fiber-broadband-complaint-system/blob/main/indexfile.PNG)
+
+
+# How TO Run This File
+Make sure you the follwoing tools installed, XAMPP, VS CODE or Sublime Or Any Text Editor, and a Browser
+
+1. Download this project
+2. Extract the file
+3. Start Apache & MySQL from XAMPP CONTROL PANEL
+4. Open you browser and type "loacalhost"
+5. click on PHPMYADMIN, create a database and name it "Vodafone"
+6. Now, import the vodafone.sql file (Can be found within the project)
+7. Open new tab and type localhost/vodafone-fiber-broadband-complaint-system
+8. Manager Login (email=mohammedamini@gmail.com, password= password)
+
