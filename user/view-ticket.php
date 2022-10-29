@@ -4,7 +4,10 @@
 //userLogin($email);
 
 session_start();
-
+if (!isset($_SESSION['email']) || empty($_SESSION['email'])) {
+  header("location: login.php");
+  exit();
+}
 $customerNumberSess =  $_SESSION['customerNumber'];
 //userIsLogin();
 

@@ -1,7 +1,7 @@
 <?php 
 
 session_start();
-require_once("./auxiliaries.php");
+//require_once("./auxiliaries.php");
 if (!isset($_SESSION['email']) || empty($_SESSION['email'])) {
   header("location: login.php");
   exit();

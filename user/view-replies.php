@@ -11,7 +11,12 @@ require_once("./head.php");?>
 
 ?>
   <body>
-    <?php require_once("./side-bar.php");?>
+    <?php 
+    if (!isset($_SESSION['email']) || empty($_SESSION['email'])) {
+      header("location: login.php");
+      exit();
+    }
+    require_once("./side-bar.php");?>
     <div class="wrapper d-flex flex-column min-vh-100 bg-light">
       <?php require_once("./header.php");?>
       <div class="body flex-grow-1 px-3">
